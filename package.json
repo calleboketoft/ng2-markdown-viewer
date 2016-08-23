@@ -1,0 +1,41 @@
+{
+  "name": "ng2-markdown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "build": "npm run typings install && npm run typescript",
+    "typescript": "tsc",
+    "watch": "tsc -w",
+    "typings": "typings"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run build"
+    }
+  },
+  "keywords": [],
+  "author": "Carl-Ola Boketoft <calleboketoft@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@angular/common": "2.0.0-rc.5",
+    "@angular/compiler": "2.0.0-rc.5",
+    "@angular/core": "2.0.0-rc.5",
+    "@angular/forms": "0.3.0",
+    "@angular/platform-browser": "2.0.0-rc.5",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.5",
+    "bootstrap": "git+https://git@github.com/twbs/bootstrap.git#v4-dev",
+    "commonmark": "0.26.0",
+    "es6-shim": "0.35.1",
+    "express": "4.14.0",
+    "github-markdown-css": "2.4.0",
+    "highlight.js": "9.6.0",
+    "reflect-metadata": "0.1.8",
+    "rxjs": "5.0.0-beta.6",
+    "systemjs": "0.19.36",
+    "typescript": "1.8.10",
+    "typings": "1.3.2",
+    "zone.js": "0.6.12"
+  }
+}
