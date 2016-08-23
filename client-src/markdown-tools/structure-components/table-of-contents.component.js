@@ -12,27 +12,18 @@ var core_1 = require('@angular/core');
 var TableOfContentsComponent = (function () {
     function TableOfContentsComponent() {
     }
-    Object.defineProperty(TableOfContentsComponent.prototype, "pageElements", {
-        set: function (value) {
-            console.log(value);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    ;
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Object), 
-        __metadata('design:paramtypes', [Object])
-    ], TableOfContentsComponent.prototype, "pageElements", null);
+        __metadata('design:type', Object)
+    ], TableOfContentsComponent.prototype, "pageElements", void 0);
     TableOfContentsComponent = __decorate([
         core_1.Component({
             selector: 'table-of-contents',
-            template: "\n    ToC placeholder\n  "
+            template: "\n    <ul>\n      <li *ngFor=\"let heading of pageElements\">\n        {{ heading.elementRef.nativeElement.innerHTML }}\n      </li>\n    </ul>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], TableOfContentsComponent);
     return TableOfContentsComponent;
 }());
 exports.TableOfContentsComponent = TableOfContentsComponent;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFibGUtb2YtY29udGVudHMuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidGFibGUtb2YtY29udGVudHMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxxQkFBaUMsZUFFakMsQ0FBQyxDQUYrQztBQVFoRDtJQUFBO0lBSUEsQ0FBQztJQUhVLHNCQUFJLGtEQUFZO2FBQWhCLFVBQWtCLEtBQUs7WUFDOUIsT0FBTyxDQUFDLEdBQUcsQ0FBQyxLQUFLLENBQUMsQ0FBQTtRQUNwQixDQUFDOzs7T0FBQTs7SUFGRDtRQUFDLFlBQUssRUFBRTs7O2dFQUFBO0lBUFY7UUFBQyxnQkFBUyxDQUFDO1lBQ1QsUUFBUSxFQUFFLG1CQUFtQjtZQUM3QixRQUFRLEVBQUUsMkJBRVQ7U0FDRixDQUFDOztnQ0FBQTtJQUtGLCtCQUFDO0FBQUQsQ0FBQyxBQUpELElBSUM7QUFKWSxnQ0FBd0IsMkJBSXBDLENBQUEifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFibGUtb2YtY29udGVudHMuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidGFibGUtb2YtY29udGVudHMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxxQkFBaUMsZUFFakMsQ0FBQyxDQUYrQztBQVloRDtJQUFBO0lBRUEsQ0FBQztJQURDO1FBQUMsWUFBSyxFQUFFOztrRUFBQTtJQVhWO1FBQUMsZ0JBQVMsQ0FBQztZQUNULFFBQVEsRUFBRSxtQkFBbUI7WUFDN0IsUUFBUSxFQUFFLHFKQU1UO1NBQ0YsQ0FBQzs7Z0NBQUE7SUFHRiwrQkFBQztBQUFELENBQUMsQUFGRCxJQUVDO0FBRlksZ0NBQXdCLDJCQUVwQyxDQUFBIn0=

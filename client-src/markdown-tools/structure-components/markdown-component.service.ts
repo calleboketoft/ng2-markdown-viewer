@@ -18,6 +18,9 @@ export class MarkdownComponentService {
     // TODO give the possibility to provide a custom table of contents
     // template
     let tocTemplate = `
+      <button (click)="generateToc()">
+        Generate ToC
+      </button>
       <table-of-contents
         *ngIf="pageElements"
         [pageElements]="pageElements">
@@ -40,11 +43,11 @@ export class MarkdownComponentService {
       @ViewChildren(H4Directive) public h4Directives: QueryList<H4Directive>;
       @ViewChildren(H5Directive) public h5Directives: QueryList<H5Directive>;
 
-      public pageElements = [];
+      public pageElements;
 
       constructor (public elementRef: ElementRef) {}
 
-      ngAfterViewInit () {
+      public generateToc () {
         let headingDirectives = {
           h1: this.h1Directives.toArray(),
           h2: this.h2Directives.toArray(),
@@ -53,10 +56,11 @@ export class MarkdownComponentService {
           h5: this.h5Directives.toArray()
         }
 
-        this.pageElements.push(...Array.prototype.slice.call(this.elementRef
+        // Order all the heading directives and add to pageElements for ToC
+        this.pageElements = Array.prototype.slice.call(this.elementRef
           .nativeElement
           .querySelectorAll('h1, h2, h3, h4, h5'))
-          .map(headingEl => headingDirectives[headingEl.localName].shift(0)))
+          .map(headingEl => headingDirectives[headingEl.localName].shift(0))
       }
     }
 
