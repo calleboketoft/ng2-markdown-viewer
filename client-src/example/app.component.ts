@@ -4,7 +4,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core'
 import { FormControl } from '@angular/forms'
 
 import * as markdownService from '../markdown-tools/markdown.service'
-import { markdownStyles } from '../markdown-tools/markdown-styles'
+import { markdownStyles } from './markdown-styles'
 
 @Component({
   selector: 'app',

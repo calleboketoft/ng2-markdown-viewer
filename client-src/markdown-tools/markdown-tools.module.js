@@ -11,12 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var compiler_1 = require('@angular/compiler');
 var dynamic_markdown_component_1 = require('./dynamic-markdown.component');
+var markdown_component_service_1 = require('./markdown-component.service');
 var MarkdownToolsModule = (function () {
     function MarkdownToolsModule() {
     }
     MarkdownToolsModule = __decorate([
         core_1.NgModule({
-            providers: [compiler_1.COMPILER_PROVIDERS],
+            providers: [compiler_1.COMPILER_PROVIDERS, markdown_component_service_1.MarkdownComponentService],
             declarations: [dynamic_markdown_component_1.DynamicMarkdownComponent],
             exports: [dynamic_markdown_component_1.DynamicMarkdownComponent]
         }), 
@@ -25,4 +26,4 @@ var MarkdownToolsModule = (function () {
     return MarkdownToolsModule;
 }());
 exports.MarkdownToolsModule = MarkdownToolsModule;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFya2Rvd24tdG9vbHMubW9kdWxlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibWFya2Rvd24tdG9vbHMubW9kdWxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxxQkFBeUIsZUFDekIsQ0FBQyxDQUR1QztBQUN4Qyx5QkFBbUMsbUJBQ25DLENBQUMsQ0FEcUQ7QUFDdEQsMkNBQXlDLDhCQUV6QyxDQUFDLENBRnNFO0FBT3ZFO0lBQUE7SUFBbUMsQ0FBQztJQUxwQztRQUFDLGVBQVEsQ0FBQztZQUNSLFNBQVMsRUFBRSxDQUFDLDZCQUFrQixDQUFDO1lBQy9CLFlBQVksRUFBRSxDQUFDLHFEQUF3QixDQUFDO1lBQ3hDLE9BQU8sRUFBRSxDQUFDLHFEQUF3QixDQUFDO1NBQ3BDLENBQUM7OzJCQUFBO0lBQ2lDLDBCQUFDO0FBQUQsQ0FBQyxBQUFwQyxJQUFvQztBQUF2QiwyQkFBbUIsc0JBQUksQ0FBQSJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFya2Rvd24tdG9vbHMubW9kdWxlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibWFya2Rvd24tdG9vbHMubW9kdWxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxxQkFBeUIsZUFDekIsQ0FBQyxDQUR1QztBQUN4Qyx5QkFBbUMsbUJBQ25DLENBQUMsQ0FEcUQ7QUFDdEQsMkNBQXlDLDhCQUN6QyxDQUFDLENBRHNFO0FBQ3ZFLDJDQUF5Qyw4QkFFekMsQ0FBQyxDQUZzRTtBQU92RTtJQUFBO0lBQW1DLENBQUM7SUFMcEM7UUFBQyxlQUFRLENBQUM7WUFDUixTQUFTLEVBQUUsQ0FBQyw2QkFBa0IsRUFBRSxxREFBd0IsQ0FBQztZQUN6RCxZQUFZLEVBQUUsQ0FBQyxxREFBd0IsQ0FBQztZQUN4QyxPQUFPLEVBQUUsQ0FBQyxxREFBd0IsQ0FBQztTQUNwQyxDQUFDOzsyQkFBQTtJQUNpQywwQkFBQztBQUFELENBQUMsQUFBcEMsSUFBb0M7QUFBdkIsMkJBQW1CLHNCQUFJLENBQUEifQ==

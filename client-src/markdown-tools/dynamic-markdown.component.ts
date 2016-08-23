@@ -11,7 +11,9 @@ import {
   OnDestroy
 } from '@angular/core'
 import { RuntimeCompiler } from '@angular/compiler'
+
 import { MarkdownToolsModule } from './markdown-tools.module'
+import { MarkdownComponentService } from './structure-components/markdown-component.service'
 
 @Component({
   selector: 'dynamic-markdown',
@@ -26,7 +28,10 @@ export class DynamicMarkdownComponent implements AfterViewInit, OnDestroy {
 
   public componentRef: ComponentRef<any>;
 
-  constructor (private runtimeCompiler: RuntimeCompiler) {}
+  constructor (
+    private runtimeCompiler: RuntimeCompiler,
+    private markdownComponentService: MarkdownComponentService
+  ) {}
 
   public ngAfterViewInit () {
     this.renderContent(this.template, this.styles)
@@ -43,19 +48,11 @@ export class DynamicMarkdownComponent implements AfterViewInit, OnDestroy {
     }
   }
 
-  public buildComponent (template: string, styles: string[]) {
-    @Component({
-      selector: 'dynamic-component-spawn',
-      template: template,
-      styles: styles
-    })
-    class DynamicComponent { }
-
-    return DynamicComponent
-  }
-
   public renderContent (template, styles) {
-    let builtComponent = this.buildComponent(template, styles)
+    let builtComponent = this.markdownComponentService.buildComponent({
+      template,
+      styles
+    })
     // component and module to attach it to
     this.runtimeCompiler
       .compileComponentAsync(builtComponent, MarkdownToolsModule)
