@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var compiler_1 = require('@angular/compiler');
 var dynamic_markdown_component_1 = require('./dynamic-markdown.component');
-var markdown_component_service_1 = require('./markdown-component.service');
+var markdown_component_service_1 = require('./structure-components/markdown-component.service');
 var MarkdownToolsModule = (function () {
     function MarkdownToolsModule() {
     }
@@ -26,4 +26,4 @@ var MarkdownToolsModule = (function () {
     return MarkdownToolsModule;
 }());
 exports.MarkdownToolsModule = MarkdownToolsModule;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFya2Rvd24tdG9vbHMubW9kdWxlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibWFya2Rvd24tdG9vbHMubW9kdWxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxxQkFBeUIsZUFDekIsQ0FBQyxDQUR1QztBQUN4Qyx5QkFBbUMsbUJBQ25DLENBQUMsQ0FEcUQ7QUFDdEQsMkNBQXlDLDhCQUN6QyxDQUFDLENBRHNFO0FBQ3ZFLDJDQUF5Qyw4QkFFekMsQ0FBQyxDQUZzRTtBQU92RTtJQUFBO0lBQW1DLENBQUM7SUFMcEM7UUFBQyxlQUFRLENBQUM7WUFDUixTQUFTLEVBQUUsQ0FBQyw2QkFBa0IsRUFBRSxxREFBd0IsQ0FBQztZQUN6RCxZQUFZLEVBQUUsQ0FBQyxxREFBd0IsQ0FBQztZQUN4QyxPQUFPLEVBQUUsQ0FBQyxxREFBd0IsQ0FBQztTQUNwQyxDQUFDOzsyQkFBQTtJQUNpQywwQkFBQztBQUFELENBQUMsQUFBcEMsSUFBb0M7QUFBdkIsMkJBQW1CLHNCQUFJLENBQUEifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFya2Rvd24tdG9vbHMubW9kdWxlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsibWFya2Rvd24tdG9vbHMubW9kdWxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxxQkFBeUIsZUFDekIsQ0FBQyxDQUR1QztBQUN4Qyx5QkFBbUMsbUJBQ25DLENBQUMsQ0FEcUQ7QUFDdEQsMkNBQXlDLDhCQUN6QyxDQUFDLENBRHNFO0FBQ3ZFLDJDQUF5QyxtREFFekMsQ0FBQyxDQUYyRjtBQU81RjtJQUFBO0lBQW1DLENBQUM7SUFMcEM7UUFBQyxlQUFRLENBQUM7WUFDUixTQUFTLEVBQUUsQ0FBQyw2QkFBa0IsRUFBRSxxREFBd0IsQ0FBQztZQUN6RCxZQUFZLEVBQUUsQ0FBQyxxREFBd0IsQ0FBQztZQUN4QyxPQUFPLEVBQUUsQ0FBQyxxREFBd0IsQ0FBQztTQUNwQyxDQUFDOzsyQkFBQTtJQUNpQywwQkFBQztBQUFELENBQUMsQUFBcEMsSUFBb0M7QUFBdkIsMkJBQW1CLHNCQUFJLENBQUEifQ==

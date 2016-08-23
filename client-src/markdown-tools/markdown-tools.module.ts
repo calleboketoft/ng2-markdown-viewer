@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { COMPILER_PROVIDERS } from '@angular/compiler'
 import { DynamicMarkdownComponent } from './dynamic-markdown.component'
-import { MarkdownComponentService } from './markdown-component.service'
+import { MarkdownComponentService } from './structure-components/markdown-component.service'
 
 @NgModule({
   providers: [COMPILER_PROVIDERS, MarkdownComponentService],
