@@ -13,17 +13,17 @@ import {
 import { RuntimeCompiler } from '@angular/compiler'
 
 import { getCleanHtmlTextFromMarkdown } from './markdown.service'
-import { MarkdownToolsModule } from './markdown-tools.module'
+import { MarkdownViewerModule } from './markdown-viewer.module'
 import { MarkdownComponentService } from './structure-components/markdown-component.service'
 
 @Component({
-  selector: 'dynamic-markdown',
+  selector: 'markdown-viewer',
   template: `<div #dynamicComponentPlaceholder></div>`
 })
-export class DynamicMarkdownComponent implements AfterViewInit, OnDestroy {
+export class MarkdownViewerComponent implements AfterViewInit, OnDestroy {
+  @Input() markdown: string;
   @Input() template: string;
   @Input() styles: string[];
-  @Input() markdown: string;
 
   @ViewChild('dynamicComponentPlaceholder', { read: ViewContainerRef })
   public dynamicComponentTarget: ViewContainerRef;
@@ -58,7 +58,7 @@ export class DynamicMarkdownComponent implements AfterViewInit, OnDestroy {
     })
     // component and module to attach it to
     this.runtimeCompiler
-      .compileComponentAsync(builtComponent, MarkdownToolsModule)
+      .compileComponentAsync(builtComponent, MarkdownViewerModule)
       .then((factory: ComponentFactory<any>) => {
         this.componentRef = this.dynamicComponentTarget.createComponent(factory, 0)
 

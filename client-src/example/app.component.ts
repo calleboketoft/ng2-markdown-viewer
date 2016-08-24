@@ -27,17 +27,21 @@ import { markdownStyles } from './markdown-styles'
             [formControl]="markdownTextInput" placeholder="Markdown Text"></textarea>
         </div>
         <div class="col-xs-2">
-          <button type="button" class="btn btn-primary" (click)="renderFromTextarea()">
-            Render from text
+          <button type="button" class="btn btn-primary" (click)="renderFromTextareaHtml()">
+            Render as HTML
+          </button>
+          <button type="button" class="btn btn-primary" (click)="renderFromTextareaText()">
+            Render as Text
           </button>
         </div>
       </div>
       <hr>
-      <dynamic-markdown
-        *ngIf="markdownHtml"
+      <markdown-viewer
+        *ngIf="markdownHtml || markdownText"
         [template]="markdownHtml"
+        [markdown]="markdownText"
         [styles]="[markdownStyles]">
-      </dynamic-markdown>
+      </markdown-viewer>
     </div>
   `
 })
@@ -54,6 +58,7 @@ export class AppComponent {
 ## End`);
 
   public markdownHtml;
+  public markdownText;
   public markdownStyles = markdownStyles;
 
   public fetchMarkdownText (url) {
@@ -67,15 +72,23 @@ export class AppComponent {
   public fetchAndRender () {
     this.fetchMarkdownText(this.markdownUrlInput.value)
       .then((mdText) => {
-        this.renderMarkdown(mdText)
+        this.applyMarkdownHtml(mdText)
       })
   }
 
-  public renderFromTextarea () {
-    this.renderMarkdown(this.markdownTextInput.value)
+  public renderFromTextareaHtml () {
+    this.applyMarkdownHtml(this.markdownTextInput.value)
   }
 
-  public renderMarkdown (mdText) {
+  public renderFromTextareaText () {
+    this.applyMarkdownText(this.markdownTextInput.value)
+  }
+
+  public applyMarkdownHtml (mdText) {
     this.markdownHtml = markdownService.getCleanHtmlTextFromMarkdown(mdText)
+  }
+
+  public applyMarkdownText (mdText) {
+    this.markdownText = mdText
   }
 }

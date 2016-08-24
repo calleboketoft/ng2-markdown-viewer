@@ -29,23 +29,29 @@ var AppComponent = (function () {
         var _this = this;
         this.fetchMarkdownText(this.markdownUrlInput.value)
             .then(function (mdText) {
-            _this.renderMarkdown(mdText);
+            _this.applyMarkdownHtml(mdText);
         });
     };
-    AppComponent.prototype.renderFromTextarea = function () {
-        this.renderMarkdown(this.markdownTextInput.value);
+    AppComponent.prototype.renderFromTextareaHtml = function () {
+        this.applyMarkdownHtml(this.markdownTextInput.value);
     };
-    AppComponent.prototype.renderMarkdown = function (mdText) {
+    AppComponent.prototype.renderFromTextareaText = function () {
+        this.applyMarkdownText(this.markdownTextInput.value);
+    };
+    AppComponent.prototype.applyMarkdownHtml = function (mdText) {
         this.markdownHtml = markdownService.getCleanHtmlTextFromMarkdown(mdText);
+    };
+    AppComponent.prototype.applyMarkdownText = function (mdText) {
+        this.markdownText = mdText;
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
-            template: "\n    <div class=\"container\">\n      <h2>Commonmark Example</h2>\n      <div class=\"row\">\n        <div class=\"col-xs-4\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Markdown URL\"\n            [formControl]=\"markdownUrlInput\">\n        </div>\n        <div class=\"col-xs-2\" style=\"text-align: right;\">\n          <button type=\"button\" class=\"btn btn-primary\"\n            (click)=\"fetchAndRender()\">\n            Render from URL\n          </button>\n        </div>\n        <div class=\"col-xs-4\">\n          <textarea class=\"form-control\"\n            [formControl]=\"markdownTextInput\" placeholder=\"Markdown Text\"></textarea>\n        </div>\n        <div class=\"col-xs-2\">\n          <button type=\"button\" class=\"btn btn-primary\" (click)=\"renderFromTextarea()\">\n            Render from text\n          </button>\n        </div>\n      </div>\n      <hr>\n      <dynamic-markdown\n        *ngIf=\"markdownHtml\"\n        [template]=\"markdownHtml\"\n        [styles]=\"[markdownStyles]\">\n      </dynamic-markdown>\n    </div>\n  "
+            template: "\n    <div class=\"container\">\n      <h2>Commonmark Example</h2>\n      <div class=\"row\">\n        <div class=\"col-xs-4\">\n          <input type=\"text\" class=\"form-control\" placeholder=\"Markdown URL\"\n            [formControl]=\"markdownUrlInput\">\n        </div>\n        <div class=\"col-xs-2\" style=\"text-align: right;\">\n          <button type=\"button\" class=\"btn btn-primary\"\n            (click)=\"fetchAndRender()\">\n            Render from URL\n          </button>\n        </div>\n        <div class=\"col-xs-4\">\n          <textarea class=\"form-control\"\n            [formControl]=\"markdownTextInput\" placeholder=\"Markdown Text\"></textarea>\n        </div>\n        <div class=\"col-xs-2\">\n          <button type=\"button\" class=\"btn btn-primary\" (click)=\"renderFromTextareaHtml()\">\n            Render as HTML\n          </button>\n          <button type=\"button\" class=\"btn btn-primary\" (click)=\"renderFromTextareaText()\">\n            Render as Text\n          </button>\n        </div>\n      </div>\n      <hr>\n      <markdown-viewer\n        *ngIf=\"markdownHtml || markdownText\"\n        [template]=\"markdownHtml\"\n        [markdown]=\"markdownText\"\n        [styles]=\"[markdownStyles]\">\n      </markdown-viewer>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUVBLHFCQUFpRCxlQUNqRCxDQUFDLENBRCtEO0FBQ2hFLHNCQUE0QixnQkFFNUIsQ0FBQyxDQUYyQztBQUU1QyxJQUFZLGVBQWUsV0FBTSxvQ0FDakMsQ0FBQyxDQURvRTtBQUNyRSxnQ0FBK0IsbUJBRS9CLENBQUMsQ0FGaUQ7QUFxQ2xEO0lBQUE7UUFFUyxxQkFBZ0IsR0FBRyxJQUFJLG1CQUFXLENBQUMsZ0hBQWdILENBQUMsQ0FBQztRQUNySixzQkFBaUIsR0FBRyxJQUFJLG1CQUFXLENBQUMsdUdBT3RDLENBQUMsQ0FBQztRQUdBLG1CQUFjLEdBQUcsZ0NBQWMsQ0FBQztJQXdCekMsQ0FBQztJQXRCUSx3Q0FBaUIsR0FBeEIsVUFBMEIsR0FBRztRQUMzQixNQUFNLENBQUMsS0FBSyxDQUFDLEdBQUcsQ0FBQzthQUNkLElBQUksQ0FBQyxVQUFBLEdBQUcsSUFBSSxPQUFBLEdBQUcsQ0FBQyxJQUFJLEVBQUUsRUFBVixDQUFVLENBQUM7YUFDdkIsSUFBSSxDQUFDLFVBQUEsT0FBTztZQUNYLE1BQU0sQ0FBQyxPQUFPLENBQUE7UUFDaEIsQ0FBQyxDQUFDLENBQUE7SUFDTixDQUFDO0lBRU0scUNBQWMsR0FBckI7UUFBQSxpQkFLQztRQUpDLElBQUksQ0FBQyxpQkFBaUIsQ0FBQyxJQUFJLENBQUMsZ0JBQWdCLENBQUMsS0FBSyxDQUFDO2FBQ2hELElBQUksQ0FBQyxVQUFDLE1BQU07WUFDWCxLQUFJLENBQUMsY0FBYyxDQUFDLE1BQU0sQ0FBQyxDQUFBO1FBQzdCLENBQUMsQ0FBQyxDQUFBO0lBQ04sQ0FBQztJQUVNLHlDQUFrQixHQUF6QjtRQUNFLElBQUksQ0FBQyxjQUFjLENBQUMsSUFBSSxDQUFDLGlCQUFpQixDQUFDLEtBQUssQ0FBQyxDQUFBO0lBQ25ELENBQUM7SUFFTSxxQ0FBYyxHQUFyQixVQUF1QixNQUFNO1FBQzNCLElBQUksQ0FBQyxZQUFZLEdBQUcsZUFBZSxDQUFDLDRCQUE0QixDQUFDLE1BQU0sQ0FBQyxDQUFBO0lBQzFFLENBQUM7SUF2RUg7UUFBQyxnQkFBUyxDQUFDO1lBQ1QsUUFBUSxFQUFFLEtBQUs7WUFDZixRQUFRLEVBQUUsdWtDQStCVDtTQUNGLENBQUM7O29CQUFBO0lBc0NGLG1CQUFDO0FBQUQsQ0FBQyxBQXJDRCxJQXFDQztBQXJDWSxvQkFBWSxlQXFDeEIsQ0FBQSJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImFwcC5jb21wb25lbnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUVBLHFCQUFpRCxlQUNqRCxDQUFDLENBRCtEO0FBQ2hFLHNCQUE0QixnQkFFNUIsQ0FBQyxDQUYyQztBQUU1QyxJQUFZLGVBQWUsV0FBTSxvQ0FDakMsQ0FBQyxDQURvRTtBQUNyRSxnQ0FBK0IsbUJBRS9CLENBQUMsQ0FGaUQ7QUF5Q2xEO0lBQUE7UUFFUyxxQkFBZ0IsR0FBRyxJQUFJLG1CQUFXLENBQUMsZ0hBQWdILENBQUMsQ0FBQztRQUNySixzQkFBaUIsR0FBRyxJQUFJLG1CQUFXLENBQUMsdUdBT3RDLENBQUMsQ0FBQztRQUlBLG1CQUFjLEdBQUcsZ0NBQWMsQ0FBQztJQWdDekMsQ0FBQztJQTlCUSx3Q0FBaUIsR0FBeEIsVUFBMEIsR0FBRztRQUMzQixNQUFNLENBQUMsS0FBSyxDQUFDLEdBQUcsQ0FBQzthQUNkLElBQUksQ0FBQyxVQUFBLEdBQUcsSUFBSSxPQUFBLEdBQUcsQ0FBQyxJQUFJLEVBQUUsRUFBVixDQUFVLENBQUM7YUFDdkIsSUFBSSxDQUFDLFVBQUEsT0FBTztZQUNYLE1BQU0sQ0FBQyxPQUFPLENBQUE7UUFDaEIsQ0FBQyxDQUFDLENBQUE7SUFDTixDQUFDO0lBRU0scUNBQWMsR0FBckI7UUFBQSxpQkFLQztRQUpDLElBQUksQ0FBQyxpQkFBaUIsQ0FBQyxJQUFJLENBQUMsZ0JBQWdCLENBQUMsS0FBSyxDQUFDO2FBQ2hELElBQUksQ0FBQyxVQUFDLE1BQU07WUFDWCxLQUFJLENBQUMsaUJBQWlCLENBQUMsTUFBTSxDQUFDLENBQUE7UUFDaEMsQ0FBQyxDQUFDLENBQUE7SUFDTixDQUFDO0lBRU0sNkNBQXNCLEdBQTdCO1FBQ0UsSUFBSSxDQUFDLGlCQUFpQixDQUFDLElBQUksQ0FBQyxpQkFBaUIsQ0FBQyxLQUFLLENBQUMsQ0FBQTtJQUN0RCxDQUFDO0lBRU0sNkNBQXNCLEdBQTdCO1FBQ0UsSUFBSSxDQUFDLGlCQUFpQixDQUFDLElBQUksQ0FBQyxpQkFBaUIsQ0FBQyxLQUFLLENBQUMsQ0FBQTtJQUN0RCxDQUFDO0lBRU0sd0NBQWlCLEdBQXhCLFVBQTBCLE1BQU07UUFDOUIsSUFBSSxDQUFDLFlBQVksR0FBRyxlQUFlLENBQUMsNEJBQTRCLENBQUMsTUFBTSxDQUFDLENBQUE7SUFDMUUsQ0FBQztJQUVNLHdDQUFpQixHQUF4QixVQUEwQixNQUFNO1FBQzlCLElBQUksQ0FBQyxZQUFZLEdBQUcsTUFBTSxDQUFBO0lBQzVCLENBQUM7SUFwRkg7UUFBQyxnQkFBUyxDQUFDO1lBQ1QsUUFBUSxFQUFFLEtBQUs7WUFDZixRQUFRLEVBQUUsZ3hDQW1DVDtTQUNGLENBQUM7O29CQUFBO0lBK0NGLG1CQUFDO0FBQUQsQ0FBQyxBQTlDRCxJQThDQztBQTlDWSxvQkFBWSxlQThDeEIsQ0FBQSJ9

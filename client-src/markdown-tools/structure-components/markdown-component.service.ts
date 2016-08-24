@@ -23,7 +23,7 @@ export class MarkdownComponentService {
     `
 
     @Component({
-      selector: 'dynamic-component-spawn',
+      selector: 'markdown-dynamic-component-spawn',
       template: tocTemplate + template,
       styles,
       directives: [
