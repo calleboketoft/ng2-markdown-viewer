@@ -12,6 +12,7 @@ import {
 } from '@angular/core'
 import { RuntimeCompiler } from '@angular/compiler'
 
+import { getCleanHtmlTextFromMarkdown } from './markdown.service'
 import { MarkdownToolsModule } from './markdown-tools.module'
 import { MarkdownComponentService } from './structure-components/markdown-component.service'
 
@@ -22,6 +23,7 @@ import { MarkdownComponentService } from './structure-components/markdown-compon
 export class DynamicMarkdownComponent implements AfterViewInit, OnDestroy {
   @Input() template: string;
   @Input() styles: string[];
+  @Input() markdown: string;
 
   @ViewChild('dynamicComponentPlaceholder', { read: ViewContainerRef })
   public dynamicComponentTarget: ViewContainerRef;
@@ -34,7 +36,12 @@ export class DynamicMarkdownComponent implements AfterViewInit, OnDestroy {
   ) {}
 
   public ngAfterViewInit () {
-    this.renderContent(this.template, this.styles)
+    if (this.template) {
+      this.renderContent(this.template, this.styles)
+    } else if (this.markdown) {
+      let htmlFromMarkdown = getCleanHtmlTextFromMarkdown(this.markdown)
+      this.renderContent(htmlFromMarkdown, this.styles)
+    }
   }
 
   public ngOnDestroy() {

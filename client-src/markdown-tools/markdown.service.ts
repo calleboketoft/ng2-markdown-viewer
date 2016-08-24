@@ -4,16 +4,16 @@ import * as commonmark from 'commonmark'
 import * as hljs from 'highlight.js'
 
 export {
-  generateHtmlFromMarkdown,
+  markdownToHtmlUsingCommonmark,
   applyHighlightingToHtml,
-  cleanCurlyBraces,
+  cleanCurlyBracesInHtml,
   getCleanHtmlTextFromMarkdown
 }
 
 let commonmarkReader = new commonmark.Parser()
 let commonmarkWriter = new commonmark.HtmlRenderer()
 
-function generateHtmlFromMarkdown (markdownText: string): HTMLElement {
+function markdownToHtmlUsingCommonmark (markdownText: string): HTMLElement {
   var parsed = commonmarkReader.parse(markdownText)
   let markdownHtml = commonmarkWriter.render(parsed)
 
@@ -31,7 +31,7 @@ function applyHighlightingToHtml (domElement: HTMLElement): HTMLElement {
   return domElCopy
 }
 
-function cleanCurlyBraces (htmlText) {
+function cleanCurlyBracesInHtml (htmlText) {
   // Handle curly braces within text (Angular 2 doesn't like)
   let htmlTextFixed = htmlText.replace(/{/g, '&#123;')
   htmlTextFixed = htmlTextFixed.replace(/}/g, '&#125;')
@@ -39,7 +39,7 @@ function cleanCurlyBraces (htmlText) {
 }
 
 function getCleanHtmlTextFromMarkdown (mdText) {
-  let mdHtmlEl = generateHtmlFromMarkdown(mdText)
+  let mdHtmlEl = markdownToHtmlUsingCommonmark(mdText)
   let mdHtmlElHighlight = applyHighlightingToHtml(mdHtmlEl)
-  return cleanCurlyBraces(mdHtmlElHighlight.outerHTML)
+  return cleanCurlyBracesInHtml(mdHtmlElHighlight.outerHTML)
 }
