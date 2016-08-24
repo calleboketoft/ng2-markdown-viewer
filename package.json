@@ -18,6 +18,11 @@
   "keywords": [],
   "author": "Carl-Ola Boketoft <calleboketoft@gmail.com>",
   "license": "ISC",
+  "peerDependencies": {
+    "@angular/core": "^2.0.0-rc.5",
+    "highlight.js": "^9.6.0",
+    "commonmark": "^0.26.0"
+  },
   "devDependencies": {
     "@angular/common": "2.0.0-rc.5",
     "@angular/compiler": "2.0.0-rc.5",
