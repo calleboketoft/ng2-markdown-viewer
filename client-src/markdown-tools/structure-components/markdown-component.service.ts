@@ -15,8 +15,6 @@ export class MarkdownComponentService {
 
   public buildComponent ({template, styles}) {
 
-    // TODO give the possibility to provide a custom table of contents
-    // template
     let tocTemplate = `
       <table-of-contents
         *ngIf="pageElements"
@@ -45,10 +43,10 @@ export class MarkdownComponentService {
       constructor (public elementRef: ElementRef) {}
 
       public ngAfterViewInit () {
-        // TODO not sure why I need this hack
-        setTimeout(() => {
-          this.generateToc()
-        }, 0)
+        // // TODO not sure why I need this hack
+        // setTimeout(() => {
+        //   this.generateToc()
+        // }, 0)
       }
 
       public generateToc () {

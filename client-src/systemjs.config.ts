@@ -6,13 +6,15 @@ System.config({
     '@angular': '/node_modules/@angular',
     'rxjs': 'node_modules/rxjs',
     'commonmark': 'node_modules/commonmark',
-    'highlight.js': 'node_modules/highlight.js'
+    'highlight.js': 'node_modules/highlight.js',
+    'ng2-page-scroll': 'node_modules/ng2-page-scroll'
   },
   packages: {
     'client-src': {defaultExtension: 'js'},
     'commonmark': {defaultExtension: 'js', main: 'dist/commonmark.js'},
     'highlight.js': {defaultExtension: 'js', main: 'lib/index.js'},
     'rxjs': {defaultExtension: 'js'},
+    'ng2-page-scroll': {defaultExtension: 'js'},
     '@angular/common': {defaultExtension: 'js', main: 'index.js'},
     '@angular/compiler': {defaultExtension: 'js', main: 'index.js'},
     '@angular/core': {defaultExtension: 'js', main: 'index.js'},
