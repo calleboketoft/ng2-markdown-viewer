@@ -1,6 +1,6 @@
 {
   "name": "@calle/ng2-markdown-viewer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Angular 2 Markdown viewer",
   "main": "index.js",
   "scripts": {
