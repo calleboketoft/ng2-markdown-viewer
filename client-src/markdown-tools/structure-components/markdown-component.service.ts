@@ -18,9 +18,6 @@ export class MarkdownComponentService {
     // TODO give the possibility to provide a custom table of contents
     // template
     let tocTemplate = `
-      <button (click)="generateToc()">
-        Generate ToC
-      </button>
       <table-of-contents
         *ngIf="pageElements"
         [pageElements]="pageElements">
@@ -46,6 +43,13 @@ export class MarkdownComponentService {
       public pageElements;
 
       constructor (public elementRef: ElementRef) {}
+
+      public ngAfterViewInit () {
+        // TODO not sure why I need this hack
+        setTimeout(() => {
+          this.generateToc()
+        }, 0)
+      }
 
       public generateToc () {
         let headingDirectives = {

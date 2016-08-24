@@ -1,3 +1,5 @@
+// Use 3rd party libs to generate HTML from Markdown
+
 import * as commonmark from 'commonmark'
 import * as hljs from 'highlight.js'
 
@@ -25,9 +27,7 @@ function applyHighlightingToHtml (domElement: HTMLElement): HTMLElement {
   // pure function, clone the input
   let domElCopy = <HTMLElement>domElement.cloneNode(true)
   Array.prototype.slice.call(domElCopy.querySelectorAll('pre code'))
-    .forEach((block) => {
-      hljs.highlightBlock(block)
-    })
+    .forEach((block) => hljs.highlightBlock(block))
   return domElCopy
 }
 

@@ -44,7 +44,14 @@ import { markdownStyles } from './markdown-styles'
 export class AppComponent {
 
   public markdownUrlInput = new FormControl('https://raw.githubusercontent.com/calleboketoft/co-quick-start-guides/master/angular2-module-for-publishing.md');
-  public markdownTextInput = new FormControl('# hello there');
+  public markdownTextInput = new FormControl(`# Example
+## With headings
+### Of different
+## Sizes
+### To try
+#### ToC creation
+# the
+## End`);
 
   public markdownHtml;
   public markdownStyles = markdownStyles;

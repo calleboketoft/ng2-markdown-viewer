@@ -24,7 +24,7 @@ export class DynamicMarkdownComponent implements AfterViewInit, OnDestroy {
   @Input() styles: string[];
 
   @ViewChild('dynamicComponentPlaceholder', { read: ViewContainerRef })
-  public dynamicComponentTarget: ViewContainerRef
+  public dynamicComponentTarget: ViewContainerRef;
 
   public componentRef: ComponentRef<any>;
 
@@ -38,10 +38,6 @@ export class DynamicMarkdownComponent implements AfterViewInit, OnDestroy {
   }
 
   public ngOnDestroy() {
-    this.cleanUpComponentRef()
-  }
-
-  public cleanUpComponentRef () {
     if (this.componentRef) {
       this.componentRef.destroy()
       this.componentRef = null
@@ -59,7 +55,7 @@ export class DynamicMarkdownComponent implements AfterViewInit, OnDestroy {
       .then((factory: ComponentFactory<any>) => {
         this.componentRef = this.dynamicComponentTarget.createComponent(factory, 0)
 
-        // a reference to the component in action
+        // a reference to the newly compiled component instance
         let componentInstance = this.componentRef.instance
       })
   }
