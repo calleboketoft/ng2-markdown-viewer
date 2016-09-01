@@ -4,7 +4,7 @@ Runtime compilation of markdown to Angular 2 HTML template
 
 - `npm install --save-dev @calle/ng2-markdown-viewer commonmark highlight.js`
 - If you're using webpack you also need to use `json-loader` since `commonmark` loads JSON files
-- `typings install dt~commonmark dt~highlight.js --global --save`
+- `typings install dt~commonmark dt~highlightjs --global --save`
 - Add the `MarkdownViewerModule` to your app:
 
 ```javascript
