@@ -3,7 +3,12 @@ System.config({
   baseURL: '/',
   warnings: true,
   map: {
-    '@angular': '/node_modules/@angular',
+    '@angular/core': 'node_modules/@angular/core/bundles/core.umd.js',
+    '@angular/common': 'node_modules/@angular/common/bundles/common.umd.js',
+    '@angular/compiler': 'node_modules/@angular/compiler/bundles/compiler.umd.js',
+    '@angular/forms': 'node_modules/@angular/forms/bundles/forms.umd.js',
+    '@angular/platform-browser': 'node_modules/@angular/platform-browser/bundles/platform-browser.umd.js',
+    '@angular/platform-browser-dynamic': 'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
     'rxjs': 'node_modules/rxjs',
     'commonmark': 'node_modules/commonmark',
     'highlight.js': 'node_modules/highlight.js'
@@ -13,15 +18,12 @@ System.config({
     'commonmark': {defaultExtension: 'js', main: 'dist/commonmark.js'},
     'highlight.js': {defaultExtension: 'js', main: 'lib/index.js'},
     'rxjs': {defaultExtension: 'js'},
-    '@angular/common': {defaultExtension: 'js', main: 'index.js'},
-    '@angular/compiler': {defaultExtension: 'js', main: 'index.js'},
-    '@angular/core': {defaultExtension: 'js', main: 'index.js'},
-    '@angular/forms': {defaultExtension: 'js', main: 'index.js'},
-    '@angular/http': {defaultExtension: 'js', main: 'index.js'},
-    '@angular/platform-browser': {defaultExtension: 'js', main: 'index.js'},
-    '@angular/platform-browser-dynamic': {defaultExtension: 'js', main: 'index.js'},
-    '@angular/router': {defaultExtension: 'js', main: 'index.js'},
-    '@angular/testing': {defaultExtension: 'js', main: 'index.js'},
-    '@angular/upgrade': {defaultExtension: 'js', main: 'index.js'}
+    '@angular/common': {defaultExtension: 'js'},
+    '@angular/compiler': {defaultExtension: 'js'},
+    '@angular/core': {defaultExtension: 'js'},
+    '@angular/forms': {defaultExtension: 'js'},
+    '@angular/http': {defaultExtension: 'js'},
+    '@angular/platform-browser': {defaultExtension: 'js'},
+    '@angular/platform-browser-dynamic': {defaultExtension: 'js'}
   }
 })
