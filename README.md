@@ -1,5 +1,7 @@
 # ng2-markdown
 
+NOTE: Since RC6, the implemented RuntimeCompiler solution is broken.
+
 Runtime compilation of markdown to Angular 2 HTML template
 
 - `npm install --save-dev @calle/ng2-markdown-viewer commonmark highlight.js`

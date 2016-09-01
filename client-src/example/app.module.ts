@@ -6,8 +6,14 @@ import { MarkdownViewerModule } from '../markdown-tools/markdown-viewer.module'
 import { AppComponent } from './app.component'
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, ReactiveFormsModule, MarkdownViewerModule],
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    MarkdownViewerModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

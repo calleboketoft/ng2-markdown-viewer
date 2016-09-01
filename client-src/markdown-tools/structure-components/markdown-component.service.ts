@@ -3,13 +3,12 @@
  * Directives here can add functionality to all the tags.
  */
 
-import { Component, ViewChildren, QueryList, ElementRef } from '@angular/core'
+import { NgModule, Component, ViewChildren, QueryList, ElementRef } from '@angular/core'
 import { H1Directive } from './h1.directive'
 import { H2Directive } from './h2.directive'
 import { H3Directive } from './h3.directive'
 import { H4Directive } from './h4.directive'
 import { H5Directive } from './h5.directive'
-import { TableOfContentsComponent } from './table-of-contents.component'
 
 export class MarkdownComponentService {
 
@@ -24,12 +23,10 @@ export class MarkdownComponentService {
 
     @Component({
       selector: 'markdown-dynamic-component-spawn',
-      template: tocTemplate + template,
+      // TODO fix the ToC later
+      // template: tocTemplate + template,
+      template: template,
       styles,
-      directives: [
-        H1Directive, H2Directive, H3Directive, H4Directive, H5Directive,
-        TableOfContentsComponent
-      ]
     })
     class DynamicComponent {
       @ViewChildren(H1Directive) public h1Directives: QueryList<H1Directive>;
@@ -64,8 +61,13 @@ export class MarkdownComponentService {
           .querySelectorAll('h1, h2, h3, h4, h5'))
           .map(headingEl => headingDirectives[headingEl.localName].shift(0))
       }
-    }
 
-    return DynamicComponent
+    }
+    @NgModule({
+      declarations: [DynamicComponent]
+    })
+    class DynamicModule { }
+
+    return DynamicModule
   }
 }

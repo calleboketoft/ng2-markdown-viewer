@@ -7,6 +7,7 @@ import {
   ViewContainerRef,
   AfterViewInit,
   ComponentFactory,
+  NgModuleFactory,
   Input,
   OnDestroy
 } from '@angular/core'
@@ -58,12 +59,21 @@ export class MarkdownViewerComponent implements AfterViewInit, OnDestroy {
     })
     // component and module to attach it to
     this.runtimeCompiler
-      .compileComponentAsync(builtComponent, MarkdownViewerModule)
-      .then((factory: ComponentFactory<any>) => {
-        this.componentRef = this.dynamicComponentTarget.createComponent(factory, 0)
+      .compileModuleAsync(builtComponent)
+        .then((ngModuleFactory: NgModuleFactory<any>) => {
+          console.log("ALERT! This stuff doesn't work. It isn't even documented yet.")
+          console.log(ngModuleFactory)
+        })
+      // http://stackoverflow.com/questions/34784778/equivalent-of-compile-in-angular-2
 
-        // a reference to the newly compiled component instance
-        let componentInstance = this.componentRef.instance
-      })
+      // This stuff worked with RC5. RC6 only works with NgModule
+
+      // .compileComponentAsync(builtComponent, MarkdownViewerModule)
+      // .then((factory: ComponentFactory<any>) => {
+      //   this.componentRef = this.dynamicComponentTarget.createComponent(factory, 0)
+
+      //   // a reference to the newly compiled component instance
+      //   let componentInstance = this.componentRef.instance
+      // })
   }
 }
