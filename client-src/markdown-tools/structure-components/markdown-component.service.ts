@@ -9,10 +9,11 @@ import { H2Directive } from './h2.directive'
 import { H3Directive } from './h3.directive'
 import { H4Directive } from './h4.directive'
 import { H5Directive } from './h5.directive'
+import { MarkdownViewerModule } from '../markdown-viewer.module'
 
 export class MarkdownComponentService {
 
-  public buildComponent ({template, styles}) {
+  public buildDynamicComponent ({template, styles}) {
 
     let tocTemplate = `
       <table-of-contents
@@ -21,6 +22,7 @@ export class MarkdownComponentService {
       </table-of-contents>
     `
 
+    // Dynamic component
     @Component({
       selector: 'markdown-dynamic-component-spawn',
       // TODO fix the ToC later
@@ -61,13 +63,20 @@ export class MarkdownComponentService {
           .querySelectorAll('h1, h2, h3, h4, h5'))
           .map(headingEl => headingDirectives[headingEl.localName].shift(0))
       }
-
     }
+
+    return DynamicComponent
+  }
+
+  public buildRuntimeComponentModule (DynamicComponent) {
+    // Dynamic module
     @NgModule({
+      // Module with heading directives etc.
+      imports: [MarkdownViewerModule],
       declarations: [DynamicComponent]
     })
-    class DynamicModule { }
+    class RuntimeComponentModule { }
 
-    return DynamicModule
+    return RuntimeComponentModule
   }
 }

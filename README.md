@@ -1,6 +1,8 @@
 # ng2-markdown
 
-NOTE: Since RC6, the implemented RuntimeCompiler solution is broken.
+Based on info in this link:
+
+http://stackoverflow.com/questions/34784778/equivalent-of-compile-in-angular-2
 
 Runtime compilation of markdown to Angular 2 HTML template
 
