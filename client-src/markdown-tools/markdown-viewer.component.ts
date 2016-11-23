@@ -11,7 +11,7 @@ import {
   Input,
   OnDestroy
 } from '@angular/core'
-import { RuntimeCompiler } from '@angular/compiler'
+import { JitCompiler } from '@angular/compiler'
 
 import { getCleanHtmlTextFromMarkdown } from './markdown.service'
 import { MarkdownViewerModule } from './markdown-viewer.module'
@@ -32,7 +32,7 @@ export class MarkdownViewerComponent implements AfterViewInit, OnDestroy {
   public componentRef: ComponentRef<any>;
 
   constructor (
-    private runtimeCompiler: RuntimeCompiler,
+    private jitCompiler: JitCompiler,
     private markdownComponentService: MarkdownComponentService
   ) {}
 
@@ -59,7 +59,7 @@ export class MarkdownViewerComponent implements AfterViewInit, OnDestroy {
     })
     let runtimeComponentModule = this.markdownComponentService.buildRuntimeComponentModule(dynamicComponent)
     // component and module to attach it to
-    this.runtimeCompiler
+    this.jitCompiler
       .compileModuleAndAllComponentsAsync(runtimeComponentModule)
         .then((moduleWithFactories) => {
           // find THE factory (TODO should use deeper comparison to be sure)
