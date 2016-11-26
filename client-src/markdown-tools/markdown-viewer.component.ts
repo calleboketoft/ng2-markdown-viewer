@@ -11,7 +11,7 @@ import {
   Input,
   OnDestroy
 } from '@angular/core'
-import { JitCompiler } from '@angular/compiler'
+import { RuntimeCompiler } from '@angular/compiler'
 
 import { getCleanHtmlTextFromMarkdown } from './markdown.service'
 import { MarkdownViewerModule } from './markdown-viewer.module'
@@ -32,7 +32,7 @@ export class MarkdownViewerComponent implements AfterViewInit, OnDestroy {
   public componentRef: ComponentRef<any>;
 
   constructor (
-    private jitCompiler: JitCompiler,
+    private jitCompiler: RuntimeCompiler,
     private markdownComponentService: MarkdownComponentService
   ) {}
 

@@ -14,10 +14,10 @@ let commonmarkReader = new commonmark.Parser()
 let commonmarkWriter = new commonmark.HtmlRenderer()
 
 function markdownToHtmlUsingCommonmark (markdownText: string): HTMLElement {
-  var parsed = commonmarkReader.parse(markdownText)
+  let parsed = commonmarkReader.parse(markdownText)
   let markdownHtml = commonmarkWriter.render(parsed)
 
-  var div = document.createElement('div')
+  let div = document.createElement('div')
   div.className = 'markdown-body'
   div.innerHTML = markdownHtml
   return div
