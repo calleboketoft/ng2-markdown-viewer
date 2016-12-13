@@ -12,13 +12,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var h1_directive_1 = require('./h1.directive');
-var h2_directive_1 = require('./h2.directive');
-var h3_directive_1 = require('./h3.directive');
-var h4_directive_1 = require('./h4.directive');
-var h5_directive_1 = require('./h5.directive');
-var markdown_viewer_module_1 = require('../markdown-viewer.module');
+var core_1 = require("@angular/core");
+var h1_directive_1 = require("./h1.directive");
+var h2_directive_1 = require("./h2.directive");
+var h3_directive_1 = require("./h3.directive");
+var h4_directive_1 = require("./h4.directive");
+var h5_directive_1 = require("./h5.directive");
+var markdown_viewer_module_1 = require("../markdown-viewer.module");
 var MarkdownComponentService = (function () {
     function MarkdownComponentService() {
     }
@@ -50,38 +50,38 @@ var MarkdownComponentService = (function () {
                     .querySelectorAll('h1, h2, h3, h4, h5'))
                     .map(function (headingEl) { return headingDirectives[headingEl.localName].shift(0); });
             };
-            __decorate([
-                core_1.ViewChildren(h1_directive_1.H1Directive), 
-                __metadata('design:type', core_1.QueryList)
-            ], DynamicComponent.prototype, "h1Directives", void 0);
-            __decorate([
-                core_1.ViewChildren(h2_directive_1.H2Directive), 
-                __metadata('design:type', core_1.QueryList)
-            ], DynamicComponent.prototype, "h2Directives", void 0);
-            __decorate([
-                core_1.ViewChildren(h3_directive_1.H3Directive), 
-                __metadata('design:type', core_1.QueryList)
-            ], DynamicComponent.prototype, "h3Directives", void 0);
-            __decorate([
-                core_1.ViewChildren(h4_directive_1.H4Directive), 
-                __metadata('design:type', core_1.QueryList)
-            ], DynamicComponent.prototype, "h4Directives", void 0);
-            __decorate([
-                core_1.ViewChildren(h5_directive_1.H5Directive), 
-                __metadata('design:type', core_1.QueryList)
-            ], DynamicComponent.prototype, "h5Directives", void 0);
-            DynamicComponent = __decorate([
-                core_1.Component({
-                    selector: 'markdown-dynamic-component-spawn',
-                    // TODO fix the ToC later
-                    // template: tocTemplate + template,
-                    template: template,
-                    styles: styles,
-                }), 
-                __metadata('design:paramtypes', [core_1.ElementRef])
-            ], DynamicComponent);
             return DynamicComponent;
         }());
+        __decorate([
+            core_1.ViewChildren(h1_directive_1.H1Directive),
+            __metadata("design:type", core_1.QueryList)
+        ], DynamicComponent.prototype, "h1Directives", void 0);
+        __decorate([
+            core_1.ViewChildren(h2_directive_1.H2Directive),
+            __metadata("design:type", core_1.QueryList)
+        ], DynamicComponent.prototype, "h2Directives", void 0);
+        __decorate([
+            core_1.ViewChildren(h3_directive_1.H3Directive),
+            __metadata("design:type", core_1.QueryList)
+        ], DynamicComponent.prototype, "h3Directives", void 0);
+        __decorate([
+            core_1.ViewChildren(h4_directive_1.H4Directive),
+            __metadata("design:type", core_1.QueryList)
+        ], DynamicComponent.prototype, "h4Directives", void 0);
+        __decorate([
+            core_1.ViewChildren(h5_directive_1.H5Directive),
+            __metadata("design:type", core_1.QueryList)
+        ], DynamicComponent.prototype, "h5Directives", void 0);
+        DynamicComponent = __decorate([
+            core_1.Component({
+                selector: 'markdown-dynamic-component-spawn',
+                // TODO fix the ToC later
+                // template: tocTemplate + template,
+                template: template,
+                styles: styles,
+            }),
+            __metadata("design:paramtypes", [core_1.ElementRef])
+        ], DynamicComponent);
         return DynamicComponent;
     };
     MarkdownComponentService.prototype.buildRuntimeComponentModule = function (DynamicComponent) {
@@ -89,19 +89,19 @@ var MarkdownComponentService = (function () {
         var RuntimeComponentModule = (function () {
             function RuntimeComponentModule() {
             }
-            RuntimeComponentModule = __decorate([
-                core_1.NgModule({
-                    // Module with heading directives etc.
-                    imports: [markdown_viewer_module_1.MarkdownViewerModule],
-                    declarations: [DynamicComponent]
-                }), 
-                __metadata('design:paramtypes', [])
-            ], RuntimeComponentModule);
             return RuntimeComponentModule;
         }());
+        RuntimeComponentModule = __decorate([
+            core_1.NgModule({
+                // Module with heading directives etc.
+                imports: [markdown_viewer_module_1.MarkdownViewerModule],
+                declarations: [DynamicComponent]
+            }),
+            __metadata("design:paramtypes", [])
+        ], RuntimeComponentModule);
         return RuntimeComponentModule;
     };
     return MarkdownComponentService;
 }());
 exports.MarkdownComponentService = MarkdownComponentService;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFya2Rvd24tY29tcG9uZW50LnNlcnZpY2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtYXJrZG93bi1jb21wb25lbnQuc2VydmljZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0dBR0c7Ozs7Ozs7Ozs7O0FBRUgscUJBQXlFLGVBQ3pFLENBQUMsQ0FEdUY7QUFDeEYsNkJBQTRCLGdCQUM1QixDQUFDLENBRDJDO0FBQzVDLDZCQUE0QixnQkFDNUIsQ0FBQyxDQUQyQztBQUM1Qyw2QkFBNEIsZ0JBQzVCLENBQUMsQ0FEMkM7QUFDNUMsNkJBQTRCLGdCQUM1QixDQUFDLENBRDJDO0FBQzVDLDZCQUE0QixnQkFDNUIsQ0FBQyxDQUQyQztBQUM1Qyx1Q0FBcUMsMkJBRXJDLENBQUMsQ0FGK0Q7QUFFaEU7SUFBQTtJQW9FQSxDQUFDO0lBbEVRLHdEQUFxQixHQUE1QixVQUE4QixFQUFrQjtZQUFqQixzQkFBUSxFQUFFLGtCQUFNO1FBRTdDLElBQUksV0FBVyxHQUFHLHdJQUtqQixDQUFBO1FBRUQsb0JBQW9CO1FBUXBCO1lBU0UsMEJBQW9CLFVBQXNCO2dCQUF0QixlQUFVLEdBQVYsVUFBVSxDQUFZO1lBQUcsQ0FBQztZQUV2QywwQ0FBZSxHQUF0QjtnQkFDRSx3Q0FBd0M7Z0JBQ3hDLHFCQUFxQjtnQkFDckIsdUJBQXVCO2dCQUN2QixRQUFRO1lBQ1YsQ0FBQztZQUVNLHNDQUFXLEdBQWxCO2dCQUNFLElBQUksaUJBQWlCLEdBQUc7b0JBQ3RCLEVBQUUsRUFBRSxJQUFJLENBQUMsWUFBWSxDQUFDLE9BQU8sRUFBRTtvQkFDL0IsRUFBRSxFQUFFLElBQUksQ0FBQyxZQUFZLENBQUMsT0FBTyxFQUFFO29CQUMvQixFQUFFLEVBQUUsSUFBSSxDQUFDLFlBQVksQ0FBQyxPQUFPLEVBQUU7b0JBQy9CLEVBQUUsRUFBRSxJQUFJLENBQUMsWUFBWSxDQUFDLE9BQU8sRUFBRTtvQkFDL0IsRUFBRSxFQUFFLElBQUksQ0FBQyxZQUFZLENBQUMsT0FBTyxFQUFFO2lCQUNoQyxDQUFBO2dCQUVELG1FQUFtRTtnQkFDbkUsSUFBSSxDQUFDLFlBQVksR0FBRyxLQUFLLENBQUMsU0FBUyxDQUFDLEtBQUssQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLFVBQVU7cUJBQzNELGFBQWE7cUJBQ2IsZ0JBQWdCLENBQUMsb0JBQW9CLENBQUMsQ0FBQztxQkFDdkMsR0FBRyxDQUFDLFVBQUEsU0FBUyxJQUFJLE9BQUEsaUJBQWlCLENBQUMsU0FBUyxDQUFDLFNBQVMsQ0FBQyxDQUFDLEtBQUssQ0FBQyxDQUFDLENBQUMsRUFBL0MsQ0FBK0MsQ0FBQyxDQUFBO1lBQ3RFLENBQUM7WUEvQkQ7Z0JBQUMsbUJBQVksQ0FBQywwQkFBVyxDQUFDOztrRUFBQTtZQUMxQjtnQkFBQyxtQkFBWSxDQUFDLDBCQUFXLENBQUM7O2tFQUFBO1lBQzFCO2dCQUFDLG1CQUFZLENBQUMsMEJBQVcsQ0FBQzs7a0VBQUE7WUFDMUI7Z0JBQUMsbUJBQVksQ0FBQywwQkFBVyxDQUFDOztrRUFBQTtZQUMxQjtnQkFBQyxtQkFBWSxDQUFDLDBCQUFXLENBQUM7O2tFQUFBO1lBWjVCO2dCQUFDLGdCQUFTLENBQUM7b0JBQ1QsUUFBUSxFQUFFLGtDQUFrQztvQkFDNUMseUJBQXlCO29CQUN6QixvQ0FBb0M7b0JBQ3BDLFFBQVEsRUFBRSxRQUFRO29CQUNsQixjQUFNO2lCQUNQLENBQUM7O2dDQUFBO1lBa0NGLHVCQUFDO1FBQUQsQ0FBQyxBQWpDRCxJQWlDQztRQUVELE1BQU0sQ0FBQyxnQkFBZ0IsQ0FBQTtJQUN6QixDQUFDO0lBRU0sOERBQTJCLEdBQWxDLFVBQW9DLGdCQUFnQjtRQUNsRCxpQkFBaUI7UUFNakI7WUFBQTtZQUErQixDQUFDO1lBTGhDO2dCQUFDLGVBQVEsQ0FBQztvQkFDUixzQ0FBc0M7b0JBQ3RDLE9BQU8sRUFBRSxDQUFDLDZDQUFvQixDQUFDO29CQUMvQixZQUFZLEVBQUUsQ0FBQyxnQkFBZ0IsQ0FBQztpQkFDakMsQ0FBQzs7c0NBQUE7WUFDNkIsNkJBQUM7UUFBRCxDQUFDLEFBQWhDLElBQWdDO1FBRWhDLE1BQU0sQ0FBQyxzQkFBc0IsQ0FBQTtJQUMvQixDQUFDO0lBQ0gsK0JBQUM7QUFBRCxDQUFDLEFBcEVELElBb0VDO0FBcEVZLGdDQUF3QiwyQkFvRXBDLENBQUEifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFya2Rvd24tY29tcG9uZW50LnNlcnZpY2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJtYXJrZG93bi1jb21wb25lbnQuc2VydmljZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7O0dBR0c7Ozs7Ozs7Ozs7O0FBRUgsc0NBQXdGO0FBQ3hGLCtDQUE0QztBQUM1QywrQ0FBNEM7QUFDNUMsK0NBQTRDO0FBQzVDLCtDQUE0QztBQUM1QywrQ0FBNEM7QUFDNUMsb0VBQWdFO0FBRWhFO0lBQUE7SUFvRUEsQ0FBQztJQWxFUSx3REFBcUIsR0FBNUIsVUFBOEIsRUFBa0I7WUFBakIsc0JBQVEsRUFBRSxrQkFBTTtRQUU3QyxJQUFJLFdBQVcsR0FBRyx3SUFLakIsQ0FBQTtRQUVELG9CQUFvQjtRQVFwQixJQUFNLGdCQUFnQjtZQVNwQiwwQkFBb0IsVUFBc0I7Z0JBQXRCLGVBQVUsR0FBVixVQUFVLENBQVk7WUFBRyxDQUFDO1lBRXZDLDBDQUFlLEdBQXRCO2dCQUNFLHdDQUF3QztnQkFDeEMscUJBQXFCO2dCQUNyQix1QkFBdUI7Z0JBQ3ZCLFFBQVE7WUFDVixDQUFDO1lBRU0sc0NBQVcsR0FBbEI7Z0JBQ0UsSUFBSSxpQkFBaUIsR0FBRztvQkFDdEIsRUFBRSxFQUFFLElBQUksQ0FBQyxZQUFZLENBQUMsT0FBTyxFQUFFO29CQUMvQixFQUFFLEVBQUUsSUFBSSxDQUFDLFlBQVksQ0FBQyxPQUFPLEVBQUU7b0JBQy9CLEVBQUUsRUFBRSxJQUFJLENBQUMsWUFBWSxDQUFDLE9BQU8sRUFBRTtvQkFDL0IsRUFBRSxFQUFFLElBQUksQ0FBQyxZQUFZLENBQUMsT0FBTyxFQUFFO29CQUMvQixFQUFFLEVBQUUsSUFBSSxDQUFDLFlBQVksQ0FBQyxPQUFPLEVBQUU7aUJBQ2hDLENBQUE7Z0JBRUQsbUVBQW1FO2dCQUNuRSxJQUFJLENBQUMsWUFBWSxHQUFHLEtBQUssQ0FBQyxTQUFTLENBQUMsS0FBSyxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsVUFBVTtxQkFDM0QsYUFBYTtxQkFDYixnQkFBZ0IsQ0FBQyxvQkFBb0IsQ0FBQyxDQUFDO3FCQUN2QyxHQUFHLENBQUMsVUFBQSxTQUFTLElBQUksT0FBQSxpQkFBaUIsQ0FBQyxTQUFTLENBQUMsU0FBUyxDQUFDLENBQUMsS0FBSyxDQUFDLENBQUMsQ0FBQyxFQUEvQyxDQUErQyxDQUFDLENBQUE7WUFDdEUsQ0FBQztZQUNILHVCQUFDO1FBQUQsQ0FBQyxBQWpDRCxJQWlDQztRQWhDNEI7WUFBMUIsbUJBQVksQ0FBQywwQkFBVyxDQUFDO3NDQUFzQixnQkFBUzs4REFBYztRQUM1QztZQUExQixtQkFBWSxDQUFDLDBCQUFXLENBQUM7c0NBQXNCLGdCQUFTOzhEQUFjO1FBQzVDO1lBQTFCLG1CQUFZLENBQUMsMEJBQVcsQ0FBQztzQ0FBc0IsZ0JBQVM7OERBQWM7UUFDNUM7WUFBMUIsbUJBQVksQ0FBQywwQkFBVyxDQUFDO3NDQUFzQixnQkFBUzs4REFBYztRQUM1QztZQUExQixtQkFBWSxDQUFDLDBCQUFXLENBQUM7c0NBQXNCLGdCQUFTOzhEQUFjO1FBTG5FLGdCQUFnQjtZQVByQixnQkFBUyxDQUFDO2dCQUNULFFBQVEsRUFBRSxrQ0FBa0M7Z0JBQzVDLHlCQUF5QjtnQkFDekIsb0NBQW9DO2dCQUNwQyxRQUFRLEVBQUUsUUFBUTtnQkFDbEIsTUFBTSxRQUFBO2FBQ1AsQ0FBQzs2Q0FVZ0MsaUJBQVU7V0FUdEMsZ0JBQWdCLENBaUNyQjtRQUVELE1BQU0sQ0FBQyxnQkFBZ0IsQ0FBQTtJQUN6QixDQUFDO0lBRU0sOERBQTJCLEdBQWxDLFVBQW9DLGdCQUFnQjtRQUNsRCxpQkFBaUI7UUFNakIsSUFBTSxzQkFBc0I7WUFBNUI7WUFBK0IsQ0FBQztZQUFELDZCQUFDO1FBQUQsQ0FBQyxBQUFoQyxJQUFnQztRQUExQixzQkFBc0I7WUFMM0IsZUFBUSxDQUFDO2dCQUNSLHNDQUFzQztnQkFDdEMsT0FBTyxFQUFFLENBQUMsNkNBQW9CLENBQUM7Z0JBQy9CLFlBQVksRUFBRSxDQUFDLGdCQUFnQixDQUFDO2FBQ2pDLENBQUM7O1dBQ0ksc0JBQXNCLENBQUk7UUFFaEMsTUFBTSxDQUFDLHNCQUFzQixDQUFBO0lBQy9CLENBQUM7SUFDSCwrQkFBQztBQUFELENBQUMsQUFwRUQsSUFvRUM7QUFwRVksNERBQXdCIn0=

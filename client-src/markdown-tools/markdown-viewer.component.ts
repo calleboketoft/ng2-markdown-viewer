@@ -1,4 +1,4 @@
-// Using RuntimeCompiler to compile a component on the fly
+// Using JitCompiler to compile a component on the fly
 
 import {
   Component,
@@ -11,7 +11,7 @@ import {
   Input,
   OnDestroy
 } from '@angular/core'
-import { RuntimeCompiler } from '@angular/compiler'
+import { JitCompiler } from '@angular/compiler'
 
 import { getCleanHtmlTextFromMarkdown } from './markdown.service'
 import { MarkdownViewerModule } from './markdown-viewer.module'
@@ -32,7 +32,7 @@ export class MarkdownViewerComponent implements AfterViewInit, OnDestroy {
   public componentRef: ComponentRef<any>;
 
   constructor (
-    private jitCompiler: RuntimeCompiler,
+    private jitCompiler: JitCompiler,
     private markdownComponentService: MarkdownComponentService
   ) {}
 

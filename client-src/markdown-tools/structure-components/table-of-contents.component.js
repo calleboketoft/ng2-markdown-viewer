@@ -8,22 +8,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var TableOfContentsComponent = (function () {
     function TableOfContentsComponent() {
     }
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], TableOfContentsComponent.prototype, "pageElements", void 0);
-    TableOfContentsComponent = __decorate([
-        core_1.Component({
-            selector: 'table-of-contents',
-            template: "\n    <ul>\n      <li *ngFor=\"let heading of pageElements\">\n        {{ heading.elementRef.nativeElement.innerHTML }}\n      </li>\n    </ul>\n  "
-        }), 
-        __metadata('design:paramtypes', [])
-    ], TableOfContentsComponent);
     return TableOfContentsComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], TableOfContentsComponent.prototype, "pageElements", void 0);
+TableOfContentsComponent = __decorate([
+    core_1.Component({
+        selector: 'table-of-contents',
+        template: "\n    <ul>\n      <li *ngFor=\"let heading of pageElements\">\n        {{ heading.elementRef.nativeElement.innerHTML }}\n      </li>\n    </ul>\n  "
+    }),
+    __metadata("design:paramtypes", [])
+], TableOfContentsComponent);
 exports.TableOfContentsComponent = TableOfContentsComponent;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFibGUtb2YtY29udGVudHMuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidGFibGUtb2YtY29udGVudHMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxxQkFBaUMsZUFFakMsQ0FBQyxDQUYrQztBQVloRDtJQUFBO0lBRUEsQ0FBQztJQURDO1FBQUMsWUFBSyxFQUFFOztrRUFBQTtJQVhWO1FBQUMsZ0JBQVMsQ0FBQztZQUNULFFBQVEsRUFBRSxtQkFBbUI7WUFDN0IsUUFBUSxFQUFFLHFKQU1UO1NBQ0YsQ0FBQzs7Z0NBQUE7SUFHRiwrQkFBQztBQUFELENBQUMsQUFGRCxJQUVDO0FBRlksZ0NBQXdCLDJCQUVwQyxDQUFBIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFibGUtb2YtY29udGVudHMuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidGFibGUtb2YtY29udGVudHMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxzQ0FBZ0Q7QUFZaEQsSUFBYSx3QkFBd0I7SUFBckM7SUFFQSxDQUFDO0lBQUQsK0JBQUM7QUFBRCxDQUFDLEFBRkQsSUFFQztBQURVO0lBQVIsWUFBSyxFQUFFOzs4REFBYztBQURYLHdCQUF3QjtJQVZwQyxnQkFBUyxDQUFDO1FBQ1QsUUFBUSxFQUFFLG1CQUFtQjtRQUM3QixRQUFRLEVBQUUscUpBTVQ7S0FDRixDQUFDOztHQUNXLHdCQUF3QixDQUVwQztBQUZZLDREQUF3QiJ9
