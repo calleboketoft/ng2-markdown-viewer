@@ -37,7 +37,7 @@ export class MarkdownComponentService {
       @ViewChildren(H4Directive) public h4Directives: QueryList<H4Directive>;
       @ViewChildren(H5Directive) public h5Directives: QueryList<H5Directive>;
 
-      public pageElements;
+      public pageElements
 
       constructor (public elementRef: ElementRef) {}
 

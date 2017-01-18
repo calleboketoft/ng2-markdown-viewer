@@ -22,14 +22,14 @@ import { MarkdownComponentService } from './structure-components/markdown-compon
   template: `<div #dynamicComponentPlaceholder></div>`
 })
 export class MarkdownViewerComponent implements AfterViewInit, OnDestroy {
-  @Input() markdown: string;
-  @Input() template: string;
-  @Input() styles: string[];
+  @Input() markdown: string
+  @Input() template: string
+  @Input() styles: string[]
 
   @ViewChild('dynamicComponentPlaceholder', { read: ViewContainerRef })
-  public dynamicComponentTarget: ViewContainerRef;
+  public dynamicComponentTarget: ViewContainerRef
 
-  public componentRef: ComponentRef<any>;
+  public componentRef: ComponentRef<any>
 
   constructor (
     private jitCompiler: JitCompiler,

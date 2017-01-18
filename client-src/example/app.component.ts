@@ -55,11 +55,11 @@ export class AppComponent {
 ### To try
 #### ToC creation
 # the
-## End`);
+## End`)
 
-  public markdownHtml;
-  public markdownText;
-  public markdownStyles = markdownStyles;
+  public markdownHtml
+  public markdownText
+  public markdownStyles = markdownStyles
 
   public fetchMarkdownText (url) {
     return fetch(url)

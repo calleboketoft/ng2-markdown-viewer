@@ -22,8 +22,7 @@ TableOfContentsComponent = __decorate([
     core_1.Component({
         selector: 'table-of-contents',
         template: "\n    <ul>\n      <li *ngFor=\"let heading of pageElements\">\n        {{ heading.elementRef.nativeElement.innerHTML }}\n      </li>\n    </ul>\n  "
-    }),
-    __metadata("design:paramtypes", [])
+    })
 ], TableOfContentsComponent);
 exports.TableOfContentsComponent = TableOfContentsComponent;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFibGUtb2YtY29udGVudHMuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidGFibGUtb2YtY29udGVudHMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxzQ0FBZ0Q7QUFZaEQsSUFBYSx3QkFBd0I7SUFBckM7SUFFQSxDQUFDO0lBQUQsK0JBQUM7QUFBRCxDQUFDLEFBRkQsSUFFQztBQURVO0lBQVIsWUFBSyxFQUFFOzs4REFBYztBQURYLHdCQUF3QjtJQVZwQyxnQkFBUyxDQUFDO1FBQ1QsUUFBUSxFQUFFLG1CQUFtQjtRQUM3QixRQUFRLEVBQUUscUpBTVQ7S0FDRixDQUFDOztHQUNXLHdCQUF3QixDQUVwQztBQUZZLDREQUF3QiJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFibGUtb2YtY29udGVudHMuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidGFibGUtb2YtY29udGVudHMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxzQ0FBZ0Q7QUFZaEQsSUFBYSx3QkFBd0I7SUFBckM7SUFFQSxDQUFDO0lBQUQsK0JBQUM7QUFBRCxDQUFDLEFBRkQsSUFFQztBQURVO0lBQVIsWUFBSyxFQUFFOzs4REFBYTtBQURWLHdCQUF3QjtJQVZwQyxnQkFBUyxDQUFDO1FBQ1QsUUFBUSxFQUFFLG1CQUFtQjtRQUM3QixRQUFRLEVBQUUscUpBTVQ7S0FDRixDQUFDO0dBQ1csd0JBQXdCLENBRXBDO0FBRlksNERBQXdCIn0=
