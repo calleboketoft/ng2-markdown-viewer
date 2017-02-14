@@ -12,11 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/calleboketoft/ng2-markdown-viewer.git"
   },
-  "config": {
-    "ghooks": {
-      "pre-commit": "npm run build"
-    }
-  },
   "keywords": [
     "angular2"
   ],
