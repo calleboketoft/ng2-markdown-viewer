@@ -47,7 +47,7 @@ import { markdownStyles } from './markdown-styles'
 })
 export class AppComponent {
 
-  public markdownUrlInput = new FormControl('https://raw.githubusercontent.com/calleboketoft/co-quick-start-guides/master/angular2-module-for-publishing.md');
+  public markdownUrlInput = new FormControl('https://raw.githubusercontent.com/calleboketoft/ng2-markdown-viewer/master/README.md');
   public markdownTextInput = new FormControl(`# Example
 ## With headings
 ### Of different
